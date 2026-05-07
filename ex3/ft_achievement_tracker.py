@@ -37,11 +37,9 @@ def gen_player() -> dict[str, set[str]]:
 
 
 if __name__ == '__main__':
-
     print("=== Achievement Tracker System ===\n")
 
     players = gen_player()
-
     for name, achievements in players.items():
         print(f"Player {name}: {achievements}\n")
 
@@ -54,13 +52,11 @@ if __name__ == '__main__':
     for name, achievements in players.items():
 
         others = []
-
         for other_name, other_achievements in players.items():
             if other_name != name:
                 others.append(other_achievements)
 
         difference = set.difference(achievements, *others)
-
         print(f"Only {name} has: {difference}")
 
     print()
