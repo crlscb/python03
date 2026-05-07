@@ -21,7 +21,7 @@ LIST_ACHIEVEMENTS = {
 
 
 def gen_player_achievements() -> set[str]:
-    
+
     amount = random.randint(5, 9)
 
     return set(random.sample(list(LIST_ACHIEVEMENTS), amount))
@@ -44,7 +44,7 @@ if __name__ == '__main__':
 
     for name, achievements in players.items():
         print(f"Player {name}: {achievements}\n")
-    
+
     list_achievements = set.union(*players.values())
     print(f"All distinct achievements: {list_achievements}\n")
 
@@ -58,7 +58,7 @@ if __name__ == '__main__':
         for other_name, other_achievements in players.items():
             if other_name != name:
                 others.append(other_achievements)
-    
+
         difference = set.difference(achievements, *others)
 
         print(f"Only {name} has: {difference}")
@@ -72,9 +72,3 @@ if __name__ == '__main__':
         )
 
         print(f"{name} is missing: {missing}")
-    
-
-    
-    
-    
-
