@@ -11,7 +11,6 @@ LIST_ACHIEVEMENTS = {
     "Untouchable",
     "Boss Slayer",
     "Strategist",
-    "Unstoppable",
     "Speed Runner",
     "Survivor",
     "Treasure Hunter",
@@ -43,8 +42,8 @@ if __name__ == '__main__':
     for name, achievements in players.items():
         print(f"Player {name}: {achievements}\n")
 
-    list_achievements = set.union(*players.values())
-    print(f"All distinct achievements: {list_achievements}\n")
+    distinct = set.union(*players.values())
+    print(f"All distinct achievements: {distinct}\n")
 
     common = set.intersection(*players.values())
     print(f"Common achievements: {common}\n")
