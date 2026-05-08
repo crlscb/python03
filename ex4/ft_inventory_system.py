@@ -4,18 +4,24 @@ import sys
 
 def ft_inventory_system() -> dict[str, int]:
 
+    if len(sys.argv) == 1:
+        print("Usage: python3 ft_inventory_system.py item:quantity...")
+        return {}
+
     inventory = {}
 
     for arg in sys.argv[1:]:
 
-        if ':' not in arg:
+        parts = arg.split(':')
+
+        if len(parts) != 2:
             print(f"Error - invalid parameter '{arg}'")
             continue
 
-        item, quantity = arg.split(':')
+        item, quantity = parts
 
         if item in inventory:
-            print(f"Redudant item '{item} - discarding")
+            print(f"Redundant item '{item}' - discarding")
             continue
 
         try:
@@ -31,6 +37,10 @@ if __name__ == '__main__':
     print("=== Inventory System Analysis ===")
 
     inventory = ft_inventory_system()
+
+    if not inventory:
+        sys.exit()
+
     print(f"Got inventory: {inventory}")
 
     items = list(inventory.keys())
@@ -54,10 +64,10 @@ if __name__ == '__main__':
         if quantity < inventory[least_abundant]:
             least_abundant = item
 
-    print(f"Item most abundant: {most_abundant}"
-          "with quantity {inventory[most_abundant]}")
-    print(f"Item least abundant: {least_abundant}"
-          "with quantity {inventory[least_abundant]}")
+    print(f"Item most abundant: {most_abundant} "
+          f"with quantity {inventory[most_abundant]}")
+    print(f"Item least abundant: {least_abundant} "
+          f"with quantity {inventory[least_abundant]}")
 
     inventory.update({"magic_item": 1})
     print(f"Inventory update: {inventory}")
