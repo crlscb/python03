@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     print(f"Got a first tuple: {first_cords}")
     print(f"It includes: X={first_cords[0]}, "
-          "Y={first_cords[1]}, Z={first_cords[2]}")
+          f"Y={first_cords[1]}, Z={first_cords[2]}")
 
     center = (0.0, 0.0, 0.0)
     distance_center = round(calculate_pos(first_cords, center), 4)
