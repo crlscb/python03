@@ -44,7 +44,7 @@ if __name__ == '__main__':
     print(f"Got inventory: {inventory}")
 
     items = list(inventory.keys())
-    print(f"Item list {items}")
+    print(f"Item list: {items}")
 
     amount = sum(inventory.values())
     print("Total quantity of the", len(items), "items:", amount)
@@ -70,4 +70,4 @@ if __name__ == '__main__':
           f"with quantity {inventory[least_abundant]}")
 
     inventory.update({"magic_item": 1})
-    print(f"Inventory update: {inventory}")
+    print(f"Updated inventory: {inventory}")
