@@ -3,7 +3,7 @@ import sys
 
 
 def ft_command_quest() -> None:
-    print("=== Comand Quest ===")
+    print("=== Command Quest ===")
     print(f"Program name: {sys.argv[0]}")
 
     if len(sys.argv) == 1:
