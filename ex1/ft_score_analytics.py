@@ -14,9 +14,9 @@ def ft_score_analytics() -> None:
     for arg in sys.argv[1:]:
         try:
             score = int(arg)
-            scores += [score]
+            scores.append(score)
         except ValueError:
-            print(f"Invalid parameter: {arg}")
+            print(f"Invalid parameter: '{arg}'")
 
     if scores:
         print_score(scores)
@@ -35,7 +35,7 @@ def print_score(scores: list[int]) -> None:
 
     print(f"Total players: {total_players}")
     print(f"Total score: {total_score}")
-    print(f"Averge score: {average_score:.1f}")
+    print(f"Average score: {average_score:.1f}")
     print(f"High score: {high_score}")
     print(f"Low score: {low_score}")
     print(f"Score range: {score_range}")
