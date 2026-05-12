@@ -34,7 +34,7 @@ def gen_event() -> Generator[tuple[str, str], None, None]:
 def consume_event(events: list[tuple[str, str]]
                   ) -> Generator[tuple[str, str], None, None]:
 
-    while len(events) > 0:
+    while events:
 
         i = random.randint(0, len(events) - 1)
         event = events.pop(i)
@@ -55,9 +55,10 @@ if __name__ == '__main__':
 
     for i in range(10):
         event_list.append(next(events))
-    print(f"Built listo of 10 events: {event_list}")
+    print(f"Built list of 10 events: {event_list}")
 
-    for event in consume_event(event_list):
+    consume_ev = consume_event(event_list)
+    for event in consume_ev:
 
         print(f"Got event from list: {event}")
         print(f"Remains in list: {event_list}")
