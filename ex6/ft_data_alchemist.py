@@ -22,7 +22,7 @@ if __name__ == '__main__':
         player.capitalize()
         for player in PLAYER_NAMES
     ]
-    print(f"New list of with all names capitalized: {capitalized}")
+    print(f"New list with all names capitalized: {capitalized}")
 
     only_capitalized = [
         player
